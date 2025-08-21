@@ -54,8 +54,21 @@ module.exports = [
         entry: "./index.ts",
         output: {
             ...baseConfig.output,
-            filename: "index.js",
+            filename: "commonjs.js",
             library: {type: "commonjs-module"}
+        }
+    },
+    {
+        ...baseConfig,
+        entry: "./index.ts",
+        output: {
+            ...baseConfig.output,
+            filename: "umd.js",
+            library: {
+                name: 'cadesplugin',
+                type: 'umd',
+                umdNamedDefine: true,
+            }
         }
     },
     {
@@ -66,7 +79,7 @@ module.exports = [
         },
         output: {
             ...baseConfig.output,
-            filename: "index.es2015.js",
+            filename: "module.js",
             library: {type: "module"}
         },
         target: ['web'],
