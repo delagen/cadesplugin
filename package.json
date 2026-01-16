@@ -1,6 +1,6 @@
 {
   "name": "@delagen/cadesplugin",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description": "",
   "main": "./build/commonjs.js",
   "module": "./build/module.js",
