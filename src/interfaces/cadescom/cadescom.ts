@@ -14,6 +14,7 @@ import {
     CADESCOM_CONTENT_ENCODING_TYPE,
     CADESCOM_DISPLAY_DATA,
     CADESCOM_ENCRYPTION_ALGORITHM,
+    CADESCOM_HASH_ALGORITHM,
     CADESCOM_XML_SIGNATURE_TYPE,
 } from "./cadescom-enums";
 
@@ -128,14 +129,17 @@ export interface ISignedXML {
     Verify(SignedMessage: string, XPath?: string): void;
 }
 
-export interface ICPHashedData {
-    Algorithm: CAPICOM_HASH_ALGORITHM;
+export interface ICPHashedData<T extends number = CAPICOM_HASH_ALGORITHM> {
+    Algorithm: T;
     DataEncoding: CADESCOM_CONTENT_ENCODING_TYPE;
     Value: string;
 
     Hash(newVal: string): void;
 
     SetHashValue(newVal: string): void;
+}
+
+export interface ICPHashedData2 extends ICPHashedData<CAPICOM_HASH_ALGORITHM | CADESCOM_HASH_ALGORITHM> {
 }
 
 export interface ICPAttribute {
