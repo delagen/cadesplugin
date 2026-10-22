@@ -5,15 +5,14 @@
     "node_modules"
   ],
   "compilerOptions": {
-    "module": "ES2015",
-    "target": "ES5",
-    "moduleResolution": "Node",
+    "module": "esnext",
+    "target": "es2015",
+    "moduleResolution": "bundler",
     "lib": [
       "DOM",
       "ESNext"
     ],
     "declaration": true,
-    "downlevelIteration": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": false,
     "allowSyntheticDefaultImports": true,
@@ -31,7 +30,6 @@
     "noImplicitThis": true,
     "noUnusedLocals": true,
     "noUnusedParameters": false,
-    "baseUrl": ".",
     "outDir": "./build",
     "preserveConstEnums": false,
     "preserveSymlinks": true,

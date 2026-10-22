@@ -5,7 +5,13 @@
   "main": "./build/commonjs.js",
   "module": "./build/module.js",
   "browser": "./build/browser.js",
-  "es2015": "./build/module.js",
+  "exports": {
+    ".": {
+      "require": "./build/commonjs.js",
+      "types": "./build/index.d.ts",
+      "default": "./build/module.js"
+    }
+  },
   "typings": "./build/index.d.ts",
   "scripts": {
     "build": "tsc --emitDeclarationOnly && webpack --mode production",
@@ -33,13 +39,13 @@
   ],
   "dependencies": {},
   "devDependencies": {
-    "core-js": "~3.47.0",
+    "core-js": "~3.51.0",
     "url-search-params-polyfill": "~8.2.5",
-    "terser-webpack-plugin": "~5.3.16",
-    "ts-loader": "~9.5.4",
+    "terser-webpack-plugin": "~5.6.1",
+    "ts-loader": "~9.6.2",
     "tslib": "~2.8.1",
-    "typescript": "~5.9.3",
-    "webpack": "~5.104.1",
-    "webpack-cli": "~6.0.1"
+    "typescript": "~6.0.3",
+    "webpack": "~5.112.0",
+    "webpack-cli": "~7.2.3"
   }
 }
